@@ -1,0 +1,238 @@
+/* Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  background: radial-gradient(circle at center, #363636, #424040);
+  color: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HERO SECTION with Rotating Navigation */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  perspective: 1000px;
+}
+
+/* Static Profile Circle */
+.profile-circle {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 5px solid #3a0808;
+  background: url('dp.jfif') center/cover no-repeat;
+  z-index: 1;
+  filter: brightness(0.8);
+}
+
+/* Rotating Navigation */
+.rotating-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  transform-origin: center center;
+  animation: rotate 20s linear infinite;
+  z-index: 2;
+}
+.nav-item {
+  position: absolute;
+  width: 140px;
+  text-align: center;
+}
+.nav-item a {
+  display: block;
+  font-size: 20px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  background: rgba(58, 55, 55, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 3;
+}
+.nav-item a span {
+  display: inline-block;
+  animation: counter-rotate 20s linear infinite;
+}
+.nav-item a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Position nav items at cardinal positions */
+.nav-home { 
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.nav-about { 
+  top: 50%;
+  right: 2%;
+  transform: translate(0, -50%);
+}
+.nav-portfolio {
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.nav-contact { 
+  top: 50%;
+  left: 2%;
+  transform: translate(0, -50%);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes counter-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Section Base Style */
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+}
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  width: 100px;
+  height: 3px;
+  background: #353533;
+  margin: 20px auto 0;
+  display: block;
+  border-radius: 5px;
+}
+
+/* ABOUT SECTION */
+.about {
+  background: rgb(54, 54, 52);
+}
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* PORTFOLIO SECTION */
+.portfolio {
+  background: rgb(59, 59, 57);
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+.portfolio-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(54, 53, 53, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.portfolio-item:hover::after {
+  opacity: 1;
+}
+
+/* CONTACT SECTION */
+.contact {
+  background: rgba(0, 0, 0, 0.13);
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #5e5e4386;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.contact-form button:hover {
+  background: #1d1d1c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-container,
+  .profile-circle,
+  .rotating-nav {
+    width: 90vw;
+    height: 90vw;
+  }
+}

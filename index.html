@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+    <!DOCTYPE html>
+</head>
+<body>
+  <!-- HERO SECTION with Rotating Navigation -->
+  <header class="hero" id="home">
+    <div class="hero-container">
+      <div class="profile-circle"></div>
+      <nav class="rotating-nav" id="rotatingNav">
+        <div class="nav-item nav-home">
+          <a href="#home"><span>Home</span></a>
+        </div>
+        <div class="nav-item nav-about">
+          <a href="#about"><span>About</span></a>
+        </div>
+        <div class="nav-item nav-portfolio">
+          <a href="#portfolio"><span>Portfolio</span></a>
+        </div>
+        <div class="nav-item nav-contact">
+          <a href="#contact"><span>Contact</span></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <p>
+        Hello! I'm <span class="name">Zahra Altan</span>, a passionate developer
+        and designer dedicated to creating stunning digital experiences. My expertise
+        in front-end development and design enables me to build interfaces that are
+        both highly functional and visually captivating.
+      </p>
+      <p>
+        My journey started with a spark of curiosity, and over the years, I've honed
+        my skills to deliver quality projects that blend creativity with technology.
+        Let's collaborate and bring your ideas to life!
+      </p>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio" class="portfolio">
+    <h2 class="section-title">Portfolio</h2>
+    <div class="portfolio-grid">
+      <!-- Portfolio Item 1 -->
+      <div class="portfolio-item">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbB6dI6lHGs_uM6lPT1zU7AuIUoD6Q-X4SXomEoJ3OJbK5t7TNuNaXvhFvcuFQVUsnSPA&usqp=CAU"
+          alt="Project 1"
+        />
+      </div>
+      <!-- Portfolio Item 2 -->
+      <div class="portfolio-item">
+        <img
+          src="https://i.pinimg.com/236x/a2/18/07/a21807c79d192016c6bf5235ce80a3a2.jpg"
+          alt="Project 2"
+        />
+      </div>
+      <!-- Portfolio Item 3 -->
+      <div class="portfolio-item">
+        <img
+          src="https://i.pinimg.com/236x/1c/f5/2a/1cf52a8084985a8c3643489580a514c9.jpg"
+          alt="Project 3"/>
+      </div>
+      <!-- Portfolio Item 4 -->
+      <div class="portfolio-item">
+        <img
+          src="https://i.pinimg.com/236x/b7/e2/44/b7e24474f0cf6baea00933f4285f0cfa.jpg"
+          alt="Project 4"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+</body>
+</html>
